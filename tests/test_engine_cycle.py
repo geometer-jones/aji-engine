@@ -1,3 +1,5 @@
+import pickle
+
 import mlx.core as mx
 import numpy as np
 
@@ -152,6 +154,81 @@ def test_engine_state_round_trip_loads_when_config_is_compatible(tmp_path) -> No
     assert restored.last_state_load_error is None
     assert restored.turn_index == engine.turn_index
     assert restored.self_graph.num_active == engine.self_graph.num_active
+
+    with state_path.open("rb") as handle:
+        payload = pickle.load(handle)
+    assert payload["state_schema_version"] == AjiEngine.STATE_SCHEMA_VERSION
+
+
+def test_engine_state_load_accepts_legacy_unversioned_checkpoint(tmp_path) -> None:
+    state_path = tmp_path / "aji_state.pkl"
+    engine = AjiEngine(
+        AjiEngineConfig(
+            buffer_capacity=2,
+            max_nodes=6,
+            state_path=str(state_path),
+            metrics_path=None,
+        ),
+        bridge=FakeBridge(),
+    )
+    engine.respond("first")
+    engine.save_state()
+
+    with state_path.open("rb") as handle:
+        payload = pickle.load(handle)
+    payload.pop("state_schema_version", None)
+    with state_path.open("wb") as handle:
+        pickle.dump(payload, handle)
+
+    restored = AjiEngine(
+        AjiEngineConfig(
+            buffer_capacity=2,
+            max_nodes=6,
+            state_path=str(state_path),
+            metrics_path=None,
+        ),
+        bridge=FakeBridge(),
+    )
+
+    assert restored.load_state() is True
+    assert restored.loaded_from_state is True
+    assert restored.last_state_load_error is None
+
+
+def test_engine_state_load_rejects_unsupported_schema_version(tmp_path) -> None:
+    state_path = tmp_path / "aji_state.pkl"
+    engine = AjiEngine(
+        AjiEngineConfig(
+            buffer_capacity=2,
+            max_nodes=6,
+            state_path=str(state_path),
+            metrics_path=None,
+        ),
+        bridge=FakeBridge(),
+    )
+    engine.respond("first")
+    engine.save_state()
+
+    with state_path.open("rb") as handle:
+        payload = pickle.load(handle)
+    payload["state_schema_version"] = AjiEngine.STATE_SCHEMA_VERSION + 1
+    with state_path.open("wb") as handle:
+        pickle.dump(payload, handle)
+
+    restored = AjiEngine(
+        AjiEngineConfig(
+            buffer_capacity=2,
+            max_nodes=6,
+            state_path=str(state_path),
+            metrics_path=None,
+        ),
+        bridge=FakeBridge(),
+    )
+
+    assert restored.load_state() is False
+    assert restored.loaded_from_state is False
+    assert restored.last_state_load_error is not None
+    assert "state schema mismatch" in restored.last_state_load_error
 
 
 def test_engine_state_load_rejects_incompatible_config(tmp_path) -> None:

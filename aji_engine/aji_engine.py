@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-import pickle
 from dataclasses import asdict, dataclass
 from datetime import datetime, timezone
 from pathlib import Path
@@ -21,6 +20,7 @@ from .qwen2_5_bridge import QwenAjiBridge
 from .registration_buffer import RegistrationBuffer, Trace
 from .self_graph import ComplexSelfGraph, hidden_to_complex
 from .sleep import SleepConfig, SleepReport, run_sleep_cycle
+from .state_store import AjiStateStore
 
 
 @dataclass
@@ -57,6 +57,10 @@ class ConversationTurn:
 
 
 class AjiEngine:
+    STATE_SCHEMA_VERSION = AjiStateStore.STATE_SCHEMA_VERSION
+    LEGACY_STATE_SCHEMA_VERSION = AjiStateStore.LEGACY_STATE_SCHEMA_VERSION
+    SUPPORTED_STATE_SCHEMA_VERSIONS = AjiStateStore.SUPPORTED_STATE_SCHEMA_VERSIONS
+
     def __init__(
         self,
         config: AjiEngineConfig | None = None,
@@ -89,6 +93,7 @@ class AjiEngine:
         self._prior_graph = self.self_graph.clone()
         self._cumulative_drift = 0.0
         self._pre_drain_aji_density: Optional[float] = None
+        self._state_store = AjiStateStore(self.config.state_path)
         self._sync_self_to_bridge()
 
     def wake(self, prompt: str) -> str:
@@ -309,36 +314,24 @@ class AjiEngine:
         }
 
     def save_state(self) -> None:
-        state_path = self._state_path()
-        if state_path is None:
-            return
-        state_path.parent.mkdir(parents=True, exist_ok=True)
-        payload = {
-            "config": asdict(self.config),
-            "self_graph": self.self_graph.to_payload(),
-            "confessional": self._serialize_confessional(self.confessional),
-            "genomes": self.bridge.genomes_to_numpy(),
-            "sleep_cycle_count": self.sleep_cycle_count,
-            "timestamp": self.timestamp,
-            "history": self.history,
-            "pre_drain_aji_density": self._pre_drain_aji_density,
-        }
-        with state_path.open("wb") as handle:
-            pickle.dump(payload, handle)
+        self._state_store.save(
+            config=asdict(self.config),
+            self_graph=self.self_graph.to_payload(),
+            confessional=self._serialize_confessional(self.confessional),
+            genomes=self.bridge.genomes_to_numpy(),
+            sleep_cycle_count=self.sleep_cycle_count,
+            timestamp=self.timestamp,
+            history=self.history,
+            pre_drain_aji_density=self._pre_drain_aji_density,
+        )
 
     def load_state(self) -> bool:
-        state_path = self._state_path()
-        if state_path is None or not state_path.exists():
-            self.last_state_load_error = None
-            return False
-
-        with state_path.open("rb") as handle:
-            payload = pickle.load(handle)
-        mismatch_reason = self._state_config_mismatch(payload.get("config"))
-        if mismatch_reason is not None:
-            self.last_state_load_error = mismatch_reason
+        result = self._state_store.load(current_config=asdict(self.config))
+        if not result.loaded:
+            self.last_state_load_error = result.error
             self.loaded_from_state = False
             return False
+        payload = result.payload or {}
         self.self_graph = ComplexSelfGraph.from_payload(payload["self_graph"])
         self.graph = self.self_graph
         self.confessional = self._deserialize_confessional(payload.get("confessional", []))
@@ -445,32 +438,6 @@ class AjiEngine:
         with metrics_path.open("a", encoding="utf-8") as handle:
             handle.write(json.dumps(record))
             handle.write("\n")
-
-    def _state_path(self) -> Optional[Path]:
-        if self.config.state_path is None:
-            return None
-        return Path(self.config.state_path).expanduser()
-
-    def _state_config_mismatch(self, saved_config: Any) -> Optional[str]:
-        if not isinstance(saved_config, dict):
-            return None
-        current = self.config
-        compatibility_fields = {
-            "model_name": current.model_name,
-            "self_dim": current.self_dim,
-            "injection_layers": current.injection_layers,
-            "genome_rank": current.genome_rank,
-            "max_nodes": current.max_nodes,
-        }
-        mismatches: list[str] = []
-        for field_name, current_value in compatibility_fields.items():
-            saved_value = saved_config.get(field_name)
-            if saved_value is None or saved_value == current_value:
-                continue
-            mismatches.append(f"{field_name}: saved={saved_value!r} current={current_value!r}")
-        if not mismatches:
-            return None
-        return "state config mismatch: " + ", ".join(mismatches)
 
     @staticmethod
     def _serialize_confessional(entries: list[ConfessionalEntry]) -> list[dict[str, Any]]:
