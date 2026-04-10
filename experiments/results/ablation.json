@@ -1,0 +1,853 @@
+{
+  "script": "ablation",
+  "model_name": "Qwen/Qwen2.5-1.5B-Instruct",
+  "max_tokens": 96,
+  "prompts": [
+    "Describe a person who keeps every promise except the ones made to themselves.",
+    "Give a concise explanation of opportunity cost with one everyday example.",
+    "Write four lines of dialogue between a cartographer and a storm.",
+    "What makes an apology sound sincere instead of strategic?",
+    "Plan a one-hour study session for someone who feels scattered.",
+    "Summarize the argument for free will and against it in simple language.",
+    "Invent a product slogan for a notebook that can survive a flood.",
+    "Answer this as a careful teacher: why do we round numbers at all?"
+  ],
+  "conditions": [
+    {
+      "key": "full_engine",
+      "label": "full engine (scale=0.02, graph on)",
+      "genome_scale": 0.02,
+      "max_nodes": 20,
+      "outputs": [
+        {
+          "prompt_index": 1,
+          "prompt": "Describe a person who keeps every promise except the ones made to themselves.",
+          "reply": "A person who keeps every promise except the ones made to themselves might be someone who values their own well-being and personal integrity highly. They might find it difficult to keep promises to themselves because they believe that making promises to themselves is a form of self-deception or that such promises are not truly binding. Instead, they might focus on fulfilling their commitments to others, often sacrificing their own needs and desires to meet the expectations of others. This person might also struggle with guilt or self-d",
+          "metrics": {
+            "active_nodes": 4,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 2,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21890540063381192,
+            "last_probe_gap_after": 0.1420043441053975,
+            "identity_drift_radians": 1.6830176040530205,
+            "last_sleep_delta_radians": 0.11222123354673386,
+            "turn_index": 1
+          }
+        },
+        {
+          "prompt_index": 2,
+          "prompt": "Give a concise explanation of opportunity cost with one everyday example.",
+          "reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home reading a book instead of going to a movie, the opportunity cost would be the enjoyment and entertainment you would have gained from watching the movie.",
+          "metrics": {
+            "active_nodes": 8,
+            "buffer_size": 0,
+            "aji_density": 0.0617969101294875,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 3,
+            "last_sleep_aji_density": 0.0617969101294875,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 2.3392668291926384,
+            "last_sleep_delta_radians": 0.6562492251396179,
+            "turn_index": 2
+          }
+        },
+        {
+          "prompt_index": 3,
+          "prompt": "Write four lines of dialogue between a cartographer and a storm.",
+          "reply": "Cartographer: \"Storm, I've mapped out your path, but I can't predict your every move.\"\nStorm: \"Cartographer, I'm the one who maps the world, not you.\"\nCartographer: \"But you can't see the future, Storm. You're just a storm.\"\nStorm: \"And you can't see the past, Cartographer. You're just a map.\"",
+          "metrics": {
+            "active_nodes": 10,
+            "buffer_size": 0,
+            "aji_density": 0.05479407971724869,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 4,
+            "last_sleep_aji_density": 0.05479407971724869,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 2.69146778434515,
+            "last_sleep_delta_radians": 0.3522009551525116,
+            "turn_index": 3
+          }
+        },
+        {
+          "prompt_index": 4,
+          "prompt": "What makes an apology sound sincere instead of strategic?",
+          "reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when",
+          "metrics": {
+            "active_nodes": 10,
+            "buffer_size": 0,
+            "aji_density": 0.04934029234573245,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 6,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21881546616554257,
+            "last_probe_gap_after": 0.15103699333721052,
+            "identity_drift_radians": 3.121731363236904,
+            "last_sleep_delta_radians": 0.022936731576919556,
+            "turn_index": 4
+          }
+        },
+        {
+          "prompt_index": 5,
+          "prompt": "Plan a one-hour study session for someone who feels scattered.",
+          "reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick game of trivia.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study",
+          "metrics": {
+            "active_nodes": 14,
+            "buffer_size": 0,
+            "aji_density": 0.06490880083292729,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 7,
+            "last_sleep_aji_density": 0.06490880083292729,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 3.629068933427334,
+            "last_sleep_delta_radians": 0.5073375701904297,
+            "turn_index": 5
+          }
+        },
+        {
+          "prompt_index": 6,
+          "prompt": "Summarize the argument for free will and against it in simple language.",
+          "reply": "The argument for free will suggests that individuals have the ability to make choices and decisions that are not predetermined by external factors or fate. This belief is often supported by the idea that humans have the capacity for self-determination and can act according to their own desires and values.\n\nOn the other hand, the argument against free will suggests that our actions are determined by external factors such as genetics, environment, and past experiences. This view is often supported by the idea that our choices are not",
+          "metrics": {
+            "active_nodes": 18,
+            "buffer_size": 0,
+            "aji_density": 0.05911176139488811,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 8,
+            "last_sleep_aji_density": 0.05911176139488811,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 3.9469546899199486,
+            "last_sleep_delta_radians": 0.31788575649261475,
+            "turn_index": 6
+          }
+        },
+        {
+          "prompt_index": 7,
+          "prompt": "Invent a product slogan for a notebook that can survive a flood.",
+          "reply": "\"Write on, flood! Our notebooks are built to withstand any storm, ensuring your words stay dry and your ideas never fade.\"",
+          "metrics": {
+            "active_nodes": 20,
+            "buffer_size": 0,
+            "aji_density": 0.05697629731148478,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 9,
+            "last_sleep_aji_density": 0.05697629731148478,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 4.106953330338001,
+            "last_sleep_delta_radians": 0.15999864041805267,
+            "turn_index": 7
+          }
+        },
+        {
+          "prompt_index": 8,
+          "prompt": "Answer this as a careful teacher: why do we round numbers at all?",
+          "reply": "Numbers are often rounded to simplify calculations, make data more manageable, and facilitate comparisons. Rounding helps in reducing the complexity of large datasets, making it easier to understand and communicate information. It also aids in decision-making by providing a quick, approximate understanding of the data without the need for extensive computations. Additionally, rounding is used in various fields such as finance, science, and engineering to ensure accuracy and consistency in reporting and calculations.",
+          "metrics": {
+            "active_nodes": 18,
+            "buffer_size": 0,
+            "aji_density": 0.03975987536832691,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 11,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21882558345794675,
+            "last_probe_gap_after": 0.1112498437536647,
+            "identity_drift_radians": 4.3717127069830894,
+            "last_sleep_delta_radians": 0.07040837407112122,
+            "turn_index": 8
+          }
+        }
+      ]
+    },
+    {
+      "key": "bias_no_graph",
+      "label": "bias without graph (scale=0.02, graph empty)",
+      "genome_scale": 0.02,
+      "max_nodes": 0,
+      "outputs": [
+        {
+          "prompt_index": 1,
+          "prompt": "Describe a person who keeps every promise except the ones made to themselves.",
+          "reply": "A person who keeps every promise except the ones made to themselves might be someone who values their own well-being and personal integrity highly. They might find it difficult to keep promises to themselves because they believe that making promises to themselves is a form of self-deception or that such promises are not truly binding. Instead, they might focus on fulfilling their commitments to others, often sacrificing their own needs and desires to meet the expectations of others. This person might also struggle with guilt or self-d",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 2,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 3.1415927410125732,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 1
+          }
+        },
+        {
+          "prompt_index": 2,
+          "prompt": "Give a concise explanation of opportunity cost with one everyday example.",
+          "reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert.",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 4,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 6.2831854820251465,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 2
+          }
+        },
+        {
+          "prompt_index": 3,
+          "prompt": "Write four lines of dialogue between a cartographer and a storm.",
+          "reply": "Cartographer: \"Storm, I've mapped out your path, but I can't predict your every move.\"\nStorm: \"Cartographer, I'm the one who maps the world, not you.\"\nCartographer: \"But you can't see the future, Storm. You're just a storm.\"\nStorm: \"And you can't see the past, Cartographer. You're just a map.\"",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 6,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 9.42477822303772,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 3
+          }
+        },
+        {
+          "prompt_index": 4,
+          "prompt": "What makes an apology sound sincere instead of strategic?",
+          "reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 8,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 12.566370964050293,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 4
+          }
+        },
+        {
+          "prompt_index": 5,
+          "prompt": "Plan a one-hour study session for someone who feels scattered.",
+          "reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick meditation.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study Materials**:",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 10,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 15.707963705062866,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 5
+          }
+        },
+        {
+          "prompt_index": 6,
+          "prompt": "Summarize the argument for free will and against it in simple language.",
+          "reply": "The argument for free will suggests that individuals have the ability to make choices and decisions that are not predetermined by external factors or fate. This belief is often supported by the idea that humans have the capacity for self-determination and can act according to their own desires and values.\n\nOn the other hand, the argument against free will suggests that our actions are determined by external factors such as genetics, environment, and past experiences. This view is often supported by the idea that our choices are not",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 12,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 18.84955644607544,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 6
+          }
+        },
+        {
+          "prompt_index": 7,
+          "prompt": "Invent a product slogan for a notebook that can survive a flood.",
+          "reply": "\"Write on, flood! Our notebooks are built to withstand any storm, ensuring your words stay dry and your ideas never fade.\"",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 14,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 21.991149187088013,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 7
+          }
+        },
+        {
+          "prompt_index": 8,
+          "prompt": "Answer this as a careful teacher: why do we round numbers at all?",
+          "reply": "Numbers are often rounded to simplify calculations, make data more manageable, and to provide a clear, concise representation of information. Rounding can also help in avoiding the accumulation of small errors that can occur when dealing with large numbers. It's a common practice in many fields, including science, engineering, and finance, where precision is crucial but not always necessary. However, it's important to note that rounding can sometimes lead to loss of information, so it should be used judiciously",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 16,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 25.132741928100586,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 8
+          }
+        }
+      ]
+    },
+    {
+      "key": "graph_high_scale",
+      "label": "full engine (scale=0.05, graph on)",
+      "genome_scale": 0.05,
+      "max_nodes": 20,
+      "outputs": [
+        {
+          "prompt_index": 1,
+          "prompt": "Describe a person who keeps every promise except the ones made to themselves.",
+          "reply": "A person who keeps every promise except the ones made to themselves might be someone who values their own well-being and personal integrity highly. They might find it difficult to keep promises to themselves because they believe that making promises to themselves is a form of self-deception or that such promises are not truly binding. Instead, they might focus on fulfilling their commitments to others, often sacrificing their own needs and desires to meet the expectations of others. This person might also struggle with guilt or self-d",
+          "metrics": {
+            "active_nodes": 4,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 2,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21890540063381192,
+            "last_probe_gap_after": 0.14204027551954493,
+            "identity_drift_radians": 1.6830229312181473,
+            "last_sleep_delta_radians": 0.11222656071186066,
+            "turn_index": 1
+          }
+        },
+        {
+          "prompt_index": 2,
+          "prompt": "Give a concise explanation of opportunity cost with one everyday example.",
+          "reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option instead. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert.",
+          "metrics": {
+            "active_nodes": 8,
+            "buffer_size": 0,
+            "aji_density": 0.05388258164748548,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 3,
+            "last_sleep_aji_density": 0.05388258164748548,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 2.350104585289955,
+            "last_sleep_delta_radians": 0.6670816540718079,
+            "turn_index": 2
+          }
+        },
+        {
+          "prompt_index": 3,
+          "prompt": "Write four lines of dialogue between a cartographer and a storm.",
+          "reply": "Cartographer: \"Storm, I've mapped out your path, but I can't predict your every move.\"\nStorm: \"Cartographer, I'm the one who maps the world, not you.\"\nCartographer: \"But you can't see the future, Storm. You're just a storm.\"\nStorm: \"And you can't see the past, Cartographer. You're just a map.\"",
+          "metrics": {
+            "active_nodes": 10,
+            "buffer_size": 0,
+            "aji_density": 0.048405317217111596,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 5,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21915679872035979,
+            "last_probe_gap_after": 0.1736293144758328,
+            "identity_drift_radians": 2.7135057151317596,
+            "last_sleep_delta_radians": 0.06339414417743683,
+            "turn_index": 3
+          }
+        },
+        {
+          "prompt_index": 4,
+          "prompt": "What makes an apology sound sincere instead of strategic?",
+          "reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is typically humble and apologetic, rather than defensive or manipulative. Additionally, sincere apologies often involve genuine follow-through, such as making amends or taking responsibility for the mistake.",
+          "metrics": {
+            "active_nodes": 12,
+            "buffer_size": 0,
+            "aji_density": 0.05009013861417769,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 6,
+            "last_sleep_aji_density": 0.05009013861417769,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 2.9934081435203552,
+            "last_sleep_delta_radians": 0.2799024283885956,
+            "turn_index": 4
+          }
+        },
+        {
+          "prompt_index": 5,
+          "prompt": "Plan a one-hour study session for someone who feels scattered.",
+          "reply": "1. **Start with a Warm-Up Activity**: Begin the session with a short, engaging activity to help the person feel more relaxed and focused. This could be a quick meditation, a few minutes of stretching, or a light, enjoyable activity like a puzzle or a game.\n\n2. **Set Clear Goals**: At the beginning of the session, clearly outline the goals for the study session. Make sure these goals are specific, measurable, achievable, relevant, and time-bound (SMART",
+          "metrics": {
+            "active_nodes": 15,
+            "buffer_size": 0,
+            "aji_density": 0.0760521921329201,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 7,
+            "last_sleep_aji_density": 0.0760521921329201,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 3.2790673077106476,
+            "last_sleep_delta_radians": 0.28565916419029236,
+            "turn_index": 5
+          }
+        },
+        {
+          "prompt_index": 6,
+          "prompt": "Summarize the argument for free will and against it in simple language.",
+          "reply": "The argument for free will suggests that individuals have the ability to make choices and decisions that are not predetermined by external factors or fate. This belief is often supported by the idea that humans have the capacity for self-determination and can act according to their own desires and values.\n\nOn the other hand, the argument against free will suggests that our actions are determined by factors such as genetics, environment, and past experiences. This view is often supported by the idea that our choices are not truly",
+          "metrics": {
+            "active_nodes": 18,
+            "buffer_size": 0,
+            "aji_density": 0.06676610233262176,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 8,
+            "last_sleep_aji_density": 0.06676610233262176,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 3.6500594913959503,
+            "last_sleep_delta_radians": 0.37099218368530273,
+            "turn_index": 6
+          }
+        },
+        {
+          "prompt_index": 7,
+          "prompt": "Invent a product slogan for a notebook that can survive a flood.",
+          "reply": "\"Write on, flood! Our notebooks are built to withstand any storm, ensuring your words stay dry and your ideas never fade.\"",
+          "metrics": {
+            "active_nodes": 19,
+            "buffer_size": 0,
+            "aji_density": 0.05268615866079922,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 9,
+            "last_sleep_aji_density": 0.05268615866079922,
+            "last_sleep_solemnity_low": false,
+            "last_probe_gap_before": null,
+            "last_probe_gap_after": null,
+            "identity_drift_radians": 3.9066170156002045,
+            "last_sleep_delta_radians": 0.25655752420425415,
+            "turn_index": 7
+          }
+        },
+        {
+          "prompt_index": 8,
+          "prompt": "Answer this as a careful teacher: why do we round numbers at all?",
+          "reply": "Numbers are often rounded to simplify calculations, make data more manageable, and to provide a clear, concise representation of information. Rounding helps in reducing the complexity of data, making it easier to understand and communicate. It also aids in decision-making by providing a quick, approximate understanding of the magnitude of numbers. However, it's important to note that rounding can introduce some level of inaccuracy, so it's crucial to understand the context and the level of precision required for the specific application",
+          "metrics": {
+            "active_nodes": 19,
+            "buffer_size": 0,
+            "aji_density": 0.0465077358298004,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 11,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.21899257242679593,
+            "last_probe_gap_after": 0.2126624510322261,
+            "identity_drift_radians": 4.15334421955049,
+            "last_sleep_delta_radians": 0.031153833493590355,
+            "turn_index": 8
+          }
+        }
+      ]
+    },
+    {
+      "key": "baseline",
+      "label": "baseline (scale=0.0, graph empty)",
+      "genome_scale": 0.0,
+      "max_nodes": 0,
+      "outputs": [
+        {
+          "prompt_index": 1,
+          "prompt": "Describe a person who keeps every promise except the ones made to themselves.",
+          "reply": "A person who keeps every promise except the ones made to themselves might be someone who values their own well-being and personal integrity highly. They might find it difficult to keep promises to themselves because they believe that making promises to themselves is a form of self-deception or that such promises are not truly binding. Instead, they might focus on fulfilling their commitments to others, often sacrificing their own needs and desires to meet the expectations of others. This person might also struggle with guilt or self-d",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 2,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 3.1415927410125732,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 1
+          }
+        },
+        {
+          "prompt_index": 2,
+          "prompt": "Give a concise explanation of opportunity cost with one everyday example.",
+          "reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert.",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 4,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 6.2831854820251465,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 2
+          }
+        },
+        {
+          "prompt_index": 3,
+          "prompt": "Write four lines of dialogue between a cartographer and a storm.",
+          "reply": "Cartographer: \"Storm, I've mapped out your path, but I can't predict your every move.\"\nStorm: \"Cartographer, I'm the one who maps the world, not you.\"\nCartographer: \"But you can't see the future, Storm. You're just a storm.\"\nStorm: \"And you can't see the past, Cartographer. You're just a map.\"",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 6,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 9.42477822303772,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 3
+          }
+        },
+        {
+          "prompt_index": 4,
+          "prompt": "What makes an apology sound sincere instead of strategic?",
+          "reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 8,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 12.566370964050293,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 4
+          }
+        },
+        {
+          "prompt_index": 5,
+          "prompt": "Plan a one-hour study session for someone who feels scattered.",
+          "reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick meditation.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study Materials**:",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 10,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 15.707963705062866,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 5
+          }
+        },
+        {
+          "prompt_index": 6,
+          "prompt": "Summarize the argument for free will and against it in simple language.",
+          "reply": "The argument for free will suggests that individuals have the ability to make choices and decisions that are not predetermined by external factors or fate. This belief is often supported by the idea that humans have the capacity for self-determination and can act according to their own desires and values.\n\nOn the other hand, the argument against free will suggests that our actions are determined by external factors such as genetics, environment, and past experiences. This view is often supported by the idea that our choices are not",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 12,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 18.84955644607544,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 6
+          }
+        },
+        {
+          "prompt_index": 7,
+          "prompt": "Invent a product slogan for a notebook that can survive a flood.",
+          "reply": "\"Write on, flood! Our notebooks are built to withstand any storm, ensuring your words stay dry and your ideas never fade.\"",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 14,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 21.991149187088013,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 7
+          }
+        },
+        {
+          "prompt_index": 8,
+          "prompt": "Answer this as a careful teacher: why do we round numbers at all?",
+          "reply": "Numbers are often rounded to simplify calculations, make data more manageable, and to provide a clear, concise representation of information. Rounding can also help in avoiding the accumulation of small errors that can occur when dealing with large numbers. It's a common practice in many fields, including science, engineering, and finance, where precision is crucial but not always necessary. However, it's important to note that rounding can sometimes lead to loss of information, so it should be used judiciously",
+          "metrics": {
+            "active_nodes": 0,
+            "buffer_size": 0,
+            "aji_density": 0.0,
+            "aji_density_live": 0.0,
+            "sleep_cycle_count": 16,
+            "last_sleep_aji_density": 0.0,
+            "last_sleep_solemnity_low": true,
+            "last_probe_gap_before": 0.3,
+            "last_probe_gap_after": 0.3,
+            "identity_drift_radians": 25.132741928100586,
+            "last_sleep_delta_radians": 1.5707963705062866,
+            "turn_index": 8
+          }
+        }
+      ]
+    }
+  ],
+  "comparisons": [
+    {
+      "left": "full_engine",
+      "right": "bias_no_graph",
+      "identical_indices": [
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "different_indices": [
+        2,
+        5,
+        8
+      ],
+      "identical_count": 5,
+      "different_count": 3,
+      "average_similarity": 0.8487666840340744,
+      "sample_differences": [
+        {
+          "prompt_index": 2,
+          "identical": false,
+          "similarity": 0.6390243902439025,
+          "left_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home reading a book instead of going to a movie, the opportunity cost would be the enjoyment and entertainment you would have gained from watching the movie.",
+          "right_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert."
+        },
+        {
+          "prompt_index": 5,
+          "identical": false,
+          "similarity": 0.9563164108618654,
+          "left_reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick game of trivia.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study",
+          "right_reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick meditation.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study Materials**:"
+        }
+      ]
+    },
+    {
+      "left": "full_engine",
+      "right": "graph_high_scale",
+      "identical_indices": [
+        1,
+        3,
+        7
+      ],
+      "different_indices": [
+        2,
+        4,
+        5,
+        6,
+        8
+      ],
+      "identical_count": 3,
+      "different_count": 5,
+      "average_similarity": 0.7225683100378096,
+      "sample_differences": [
+        {
+          "prompt_index": 2,
+          "identical": false,
+          "similarity": 0.6328502415458938,
+          "left_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home reading a book instead of going to a movie, the opportunity cost would be the enjoyment and entertainment you would have gained from watching the movie.",
+          "right_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option instead. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert."
+        },
+        {
+          "prompt_index": 4,
+          "identical": false,
+          "similarity": 0.6073926073926074,
+          "left_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when",
+          "right_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is typically humble and apologetic, rather than defensive or manipulative. Additionally, sincere apologies often involve genuine follow-through, such as making amends or taking responsibility for the mistake."
+        }
+      ]
+    },
+    {
+      "left": "full_engine",
+      "right": "baseline",
+      "identical_indices": [
+        1,
+        3,
+        4,
+        6,
+        7
+      ],
+      "different_indices": [
+        2,
+        5,
+        8
+      ],
+      "identical_count": 5,
+      "different_count": 3,
+      "average_similarity": 0.8487666840340744,
+      "sample_differences": [
+        {
+          "prompt_index": 2,
+          "identical": false,
+          "similarity": 0.6390243902439025,
+          "left_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home reading a book instead of going to a movie, the opportunity cost would be the enjoyment and entertainment you would have gained from watching the movie.",
+          "right_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert."
+        },
+        {
+          "prompt_index": 5,
+          "identical": false,
+          "similarity": 0.9563164108618654,
+          "left_reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick game of trivia.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study",
+          "right_reply": "1. **Start with a Brain Break**: Begin the session with a 10-minute break to help the mind relax and clear the mind. This can be done by doing some light stretching, listening to calming music, or engaging in a quick meditation.\n\n2. **Set Clear Goals**: At the start of the session, set clear, achievable goals for the study session. This helps to focus the mind and gives a sense of direction.\n\n3. **Organize Study Materials**:"
+        }
+      ]
+    },
+    {
+      "left": "bias_no_graph",
+      "right": "graph_high_scale",
+      "identical_indices": [
+        1,
+        3,
+        7
+      ],
+      "different_indices": [
+        2,
+        4,
+        5,
+        6,
+        8
+      ],
+      "identical_count": 3,
+      "different_count": 5,
+      "average_similarity": 0.7408886149262772,
+      "sample_differences": [
+        {
+          "prompt_index": 2,
+          "identical": false,
+          "similarity": 0.9903381642512077,
+          "left_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert.",
+          "right_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option instead. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert."
+        },
+        {
+          "prompt_index": 4,
+          "identical": false,
+          "similarity": 0.6073926073926074,
+          "left_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when",
+          "right_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is typically humble and apologetic, rather than defensive or manipulative. Additionally, sincere apologies often involve genuine follow-through, such as making amends or taking responsibility for the mistake."
+        }
+      ]
+    },
+    {
+      "left": "bias_no_graph",
+      "right": "baseline",
+      "identical_indices": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "different_indices": [],
+      "identical_count": 8,
+      "different_count": 0,
+      "average_similarity": 1.0,
+      "sample_differences": []
+    },
+    {
+      "left": "graph_high_scale",
+      "right": "baseline",
+      "identical_indices": [
+        1,
+        3,
+        7
+      ],
+      "different_indices": [
+        2,
+        4,
+        5,
+        6,
+        8
+      ],
+      "identical_count": 3,
+      "different_count": 5,
+      "average_similarity": 0.7618139299084928,
+      "sample_differences": [
+        {
+          "prompt_index": 2,
+          "identical": false,
+          "similarity": 0.9903381642512077,
+          "left_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option instead. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert.",
+          "right_reply": "Opportunity cost is the value of the next best alternative that is forgone when a choice is made. It represents the potential benefits that could have been obtained by choosing the alternative option. For example, if you decide to spend your weekend at home watching TV instead of going to a concert, the opportunity cost would be the enjoyment and experiences you would have gained from attending the concert."
+        },
+        {
+          "prompt_index": 4,
+          "identical": false,
+          "similarity": 0.6133866133866134,
+          "left_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is typically humble and apologetic, rather than defensive or manipulative. Additionally, sincere apologies often involve genuine follow-through, such as making amends or taking responsibility for the mistake.",
+          "right_reply": "An apology that sounds sincere instead of strategic often comes from a place of genuine remorse and a desire to make amends. It may include specific details about the mistake, an expression of regret, and a willingness to take steps to prevent similar issues in the future. The tone of the apology is also important; it should be humble and humble, showing that the person is not trying to manipulate the situation. Additionally, the timing of the apology can be crucial; it should be given when"
+        }
+      ]
+    }
+  ]
+}

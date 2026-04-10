@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aji-engine"
+version = "0.1.0"
+description = "Complex self-graph control state with MLX-native Qwen2.5 KV-bias injection."
+requires-python = ">=3.9"
+dependencies = [
+    "mlx>=0.17",
+    "mlx-lm>=0.18",
+    "numpy>=1.26",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.0",
+    "torch>=2.1",
+]
+
+[tool.setuptools.packages.find]
+include = ["aji_engine*"]
